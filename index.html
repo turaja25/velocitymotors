@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="VELOCITY MOTOX - Motos de alta cilindrada premium. Potencia, elegancia y tecnología.">
+  <title>VELOCITY MOTOX | Motos Premium</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0f3460">
+</head>
+<body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Header -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="https://placehold.co/150x50/0f3460/white?text=VELOCITY+MOTOX" alt="VELOCITY MOTOX Logo">
+      </div>
+      <ul class="nav-links">
+        <li><a href="#home">Inicio</a></li>
+        <li><a href="#models">Modelos</a></li>
+        <li><a href="#finance">Financiamiento</a></li>
+        <li><a href="#gallery">Galería</a></li>
+        <li><a href="#testimonials">Testimonios</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contact">Contacto</a></li>
+      </ul>
+      <div class="nav-icons">
+        <button class="dark-mode-toggle" id="darkModeToggle">🌙</button>
+        <button class="lang-toggle" id="langToggle">EN</button>
+        <button class="cart-btn">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-count">0</span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content" data-aos="fade-up">
+      <h1>Domina la Calle con Estilo</h1>
+      <p>Motos de alta cilindrada, potencia, elegancia y control.</p>
+      <div class="hero-btns">
+        <a href="#models" class="cta-btn">Ver Modelos</a>
+        <a href="#test-drive" class="cta-btn secondary">Prueba de Manejo</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Models Section -->
+  <section id="models" class="models">
+    <h2 data-aos="fade-up">Nuestros Modelos Premium</h2>
+    <div class="model-compare">
+      <div class="compare-btn" id="compareBtn">
+        <i class="fas fa-exchange-alt"></i> Comparar Modelos
+      </div>
+    </div>
+    <div class="model-cards">
+      <div class="card" data-aos="fade-up" data-aos-delay="100">
+        <img src="https://www.mundomotero.com/wp-content/uploads/2019/02/SUZUKI-GSX-R1000R.jpg" alt="GSX-R1000R">
+        <h3>GSX-R1000R</h3>
+        <p>1000cc, 200 HP</p>
+        <p class="price">$18,990</p>
+        <button class="model-btn">Ver Detalles</button>
+        <button class="add-to-cart">Agregar al carrito</button>
+      </div>
+      <div class="card" data-aos="fade-up" data-aos-delay="200">
+        <img src="https://www.motofichas.com/images/phocagallery/Suzuki/hayabusa-1300-2021/01-suzuki-hayabusa-1300-2021-estudio-negro.jpg" alt="Hayabusa">
+        <h3>Hayabusa</h3>
+        <p>1340cc, 194 HP</p>
+        <p class="price">$21,500</p>
+        <button class="model-btn">Ver Detalles</button>
+        <button class="add-to-cart">Agregar al carrito</button>
+      </div>
+      <div class="card" data-aos="fade-up" data-aos-delay="300">
+        <img src="https://www.motofichas.com/images/phocagallery/Suzuki/v-strom-1050de-2025/10-suzuki-v-strom-1050de-2025-estudio-amarillo-01.jpg" alt="V-Strom">
+        <h3>V-Strom 1050XT</h3>
+        <p>1000cc, 107 HP</p>
+        <p class="price">$16,750</p>
+        <button class="model-btn">Ver Detalles</button>
+        <button class="add-to-cart">Agregar al carrito</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" class="gallery">
+    <h2 data-aos="fade-up">Galería de Motos</h2>
+    <div class="gallery-container">
+      <div class="gallery-item">
+        <img src="https://static1.topspeedimages.com/wordpress/wp-content/uploads/2023/08/2024-suzuki-gsx-r1000r-studio-shot.jpg" alt="Moto 1">
+        <div class="overlay">
+          <button class="view-360">Ver en 360°</button>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://motos0km.com.ar/models/suzuki-hayabusa-gallery-320180925214316.jpg" alt="Moto 2">
+        <div class="overlay">
+          <button class="view-360">Ver en 360°</button>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="https://www.motofichas.com/images/phocagallery/Suzuki/v-strom-1050de-2025/10-suzuki-v-strom-1050de-2025-estudio-amarillo-01.jpg" alt="Moto 3">
+        <div class="overlay">
+          <button class="view-360">Ver en 360°</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Finance -->
+  <section id="finance" class="finance">
+    <h2 data-aos="fade-up">Financiamiento Flexible</h2>
+    <div class="finance-calculator">
+      <input type="number" id="loanAmount" placeholder="Monto del préstamo" min="10000" max="50000">
+      <input type="number" id="months" placeholder="Meses (12 - 60)" min="12" max="60">
+      <div class="result" id="result">Cuota mensual: $0</div>
+      <button id="calculateBtn">Calcular</button>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials" class="testimonials">
+    <h2 data-aos="fade-up">Lo que dicen nuestros clientes</h2>
+    <div class="testimonial-container">
+      <div class="testimonial">
+        <p>"Increíble experiencia. La moto llegó en tiempo y forma, y el servicio fue excelente."</p>
+        <h4>- Juan Pérez</h4>
+      </div>
+      <div class="testimonial">
+        <p>"Financiación rápida, asesores profesionales. Totalmente recomendado."</p>
+        <h4>- María López</h4>
+      </div>
+      <div class="testimonial">
+        <p>"Potencia y estilo. La moto perfecta para mí."</p>
+        <h4>- Carlos Mendoza</h4>
+      </div>
+    </div>
+    <div class="testimonial-nav">
+      <button class="prev" id="prevTestimonial">❮</button>
+      <button class="next" id="nextTestimonial">❯</button>
+    </div>
+  </section>
+
+  <!-- Test Drive -->
+  <section id="test-drive" class="test-drive">
+    <h2 data-aos="fade-up">Solicita una Prueba de Manejo</h2>
+    <form id="testDriveForm">
+      <input type="text" placeholder="Nombre" required>
+      <input type="email" placeholder="Email" required>
+      <input type="tel" placeholder="Teléfono" required>
+      <select required>
+        <option value="">Modelo de interés</option>
+        <option value="gsx">GSX-R1000R</option>
+        <option value="hayabusa">Hayabusa</option>
+        <option value="vstrom">V-Strom 1050XT</option>
+      </select>
+      <button type="submit">Solicitar Prueba</button>
+    </form>
+  </section>
+
+  <!-- Blog -->
+  <section id="blog" class="blog">
+    <h2 data-aos="fade-up">Últimas Noticias</h2>
+    <div class="blog-posts">
+      <article class="blog-card">
+        <img src="https://fotografias-2.larazon.es/clipping/cmsimages02/2020/09/07/93738B82-D56C-41F8-85EC-C9B3F16B3F1A/98.jpg?crop=1000,563,x0,y94&width=1900&height=1069&optimize=low&format=webply" alt="Noticia 1">
+        <h3>Nueva Edición Limitada</h3>
+        <p>Descubre la nueva edición limitada de la GSX-R1000R...</p>
+        <a href="#">Leer más</a>
+      </article>
+      <article class="blog-card">
+        <img src="https://i.pinimg.com/564x/3b/6b/25/3b6b25d3703a3d6075d585002ce3a3a6.jpg" alt="Noticia 2">
+        <h3>Consejos de Mantenimiento</h3>
+        <p>Cómo mantener tu moto como nueva por más tiempo...</p>
+        <a href="#">Leer más</a>
+      </article>
+      <article class="blog-card">
+        <img src="https://revista.dgt.es/Galerias/multimedia/infografia/2012/comunicacion-y-seguridad-detalle.jpg" alt="Noticia 3">
+        <h3>Tecnología en Moto</h3>
+        <p>Las últimas innovaciones en motocicletas...</p>
+        <a href="#">Leer más</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+    <h2 data-aos="fade-up">Contáctanos</h2>
+    <div class="contact-content">
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3174.674135292838!2d-0.1277583844111247!3d51.50735097963621!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604b900d26973%3A0x4291f317240d8b83!2sLondres!5e0!3m2!1ses!2suk!4v1600000000000" width="100%" height="300"></iframe>
+      </div>
+      <div class="contact-info">
+        <p><i class="fas fa-phone"></i> +1 (800) VELOCITY</p>
+        <p><i class="fas fa-envelope"></i> ventas@velocitymotors.com</p>
+        <p><i class="fas fa-map-marker-alt"></i> Calle Moto 123, Ciudad</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <h2 data-aos="fade-up">Suscríbete a Nuestro Newsletter</h2>
+    <form id="newsletterForm">
+      <input type="email" placeholder="Tu correo electrónico" required>
+      <button type="submit">Suscribirse</button>
+    </form>
+  </section>
+
+  <!-- WhatsApp Floating Button -->
+  <a href="https://wa.me/1234567890" class="whatsapp-btn" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Chatbot -->
+  <div class="chatbot-container">
+    <div class="chat-header">
+      <h4>VELOCITY Assistant</h4>
+      <span class="close-btn" id="closeChat">✕</span>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <div class="message bot">¡Hola! ¿En qué puedo ayudarte?</div>
+    </div>
+    <div class="chat-input">
+      <input type="text" id="userInput" placeholder="Escribe aquí...">
+      <button id="sendBtn">Enviar</button>
+    </div>
+  </div>
+
+  <button class="chatbot-btn" id="openChat">
+    <i class="fas fa-comments"></i>
+  </button>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>VELOCITY MOTOX</h4>
+        <p>La mejor experiencia en motos de alta cilindrada.</p>
+      </div>
+      <div class="footer-section">
+        <h4>Links Rápidos</h4>
+        <ul>
+          <li><a href="#models">Modelos</a></li>
+          <li><a href="#finance">Financiamiento</a></li>
+          <li><a href="#test-drive">Prueba de Manejo</a></li>
+          <li><a href="#blog">Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="#">Términos y Condiciones</a></li>
+          <li><a href="#">Política de Privacidad</a></li>
+          <li><a href="#">Garantía</a></li>
+        </ul>
+      </div>
+    </div>
+    <p>&copy; 2025 VELOCITY MOTOX. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js.js"></script>
+</body>
+</html>
