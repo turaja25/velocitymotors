@@ -757,3 +757,187 @@ footer {
   color: #e94560;
 }
 
+
+/* Banner de Promoción */
+.promo-banner {
+  background: linear-gradient(135deg, #0f3460, #1a1a2e);
+  color: white;
+  padding: 2rem 5%;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.promo-banner::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(233, 69, 96, 0.2) 0%, transparent 70%);
+  z-index: 0;
+}
+
+.promo-content {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.promo-text h3 {
+  font-size: 1.8rem;
+  margin: 0;
+  animation: pulse 2s infinite;
+}
+
+#countdown {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #e94560;
+  margin: 0.5rem 0;
+  text-shadow: 0 0 10px rgba(233, 69, 96, 0.5);
+}
+
+/* Quiénes Somos */
+.about {
+  padding: 5rem 5%;
+  background: #f8f9fa;
+}
+
+body.dark-mode .about {
+  background: #0d1017;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-content h2 {
+  color: #0f3460;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.about-content p {
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.about-stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+.stat {
+  text-align: center;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+body.dark-mode .stat {
+  background: #16213e;
+}
+
+.stat:hover {
+  transform: translateY(-10px);
+}
+
+.stat i {
+  font-size: 2.5rem;
+  color: #e94560;
+  margin-bottom: 1rem;
+}
+
+.stat h3 {
+  font-size: 2rem;
+  margin: 0.5rem 0;
+  color: #0f3460;
+}
+
+.stat p {
+  margin: 0;
+  color: #666;
+}
+
+body.dark-mode .stat p {
+  color: #aaa;
+}
+
+/* Misión */
+.mission {
+  padding: 5rem 5%;
+  background: #ffffff;
+}
+
+body.dark-mode .mission {
+  background: #16213e;
+}
+
+.mission-content h2 {
+  color: #e94560;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.mission-content p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Visión */
+.vision {
+  padding: 5rem 5%;
+  background: #f8f9fa;
+}
+
+body.dark-mode .vision {
+  background: #0d1017;
+}
+
+.vision-content h2 {
+  color: #0f3460;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.vision-content p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Animaciones */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
