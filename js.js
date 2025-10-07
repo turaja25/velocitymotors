@@ -154,28 +154,3 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-// ... código anterior ...
-
-// Cuenta regresiva: 87 días
-const countdownElement = document.getElementById("countdown");
-const today = new Date();
-const futureDate = new Date(today);
-futureDate.setDate(today.getDate() + 87);
-
-function updateCountdown() {
-  const now = new Date().getTime();
-  const distance = futureDate - now;
-
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-
-  if (days > 0) {
-    countdownElement.textContent = `Faltan ${days} días`;
-  } else {
-    countdownElement.textContent = "¡Oferta finalizada!";
-  }
-}
-
-updateCountdown();
-setInterval(updateCountdown, 86400000); // Actualiza cada día
-
-// ... resto del código ...
