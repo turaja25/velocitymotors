@@ -154,3 +154,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
+
+// ... código anterior ...
+
+// Cuenta regresiva mejorada
+const countdownElement = document.getElementById("countdown");
+const today = new Date();
+const futureDate = new Date(today);
+futureDate.setDate(today.getDate() + 87);
+
+function updateCountdown() {
+  const now = new Date().getTime();
+  const distance = futureDate - now;
+
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+  if (days > 0) {
+    countdownElement.textContent = `Faltan ${days} días`;
+    countdownElement.style.color = "#e94560";
+  } else {
+    countdownElement.textContent = "¡Oferta finalizada!";
+    countdownElement.style.color = "#ff6b6b";
+  }
+}
+
+updateCountdown();
+setInterval(updateCountdown, 86400000); // Actualiza cada día
