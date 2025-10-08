@@ -941,3 +941,154 @@ body.dark-mode .vision {
   50% { transform: scale(1.05); }
   100% { transform: scale(1); }
 }
+
+
+/* Características */
+.features {
+  padding: 5rem 5%;
+  background: #f8f9fa;
+}
+
+body.dark-mode .features {
+  background: #0d1017;
+}
+
+.features h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #0f3460;
+  margin-bottom: 3rem;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.feature {
+  text-align: center;
+  padding: 2rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+body.dark-mode .feature {
+  background: #16213e;
+}
+
+.feature:hover {
+  transform: translateY(-10px);
+}
+
+.feature i {
+  font-size: 3rem;
+  color: #e94560;
+  margin-bottom: 1rem;
+}
+
+.feature h3 {
+  font-size: 1.5rem;
+  margin: 1rem 0;
+  color: #0f3460;
+}
+
+body.dark-mode .feature h3 {
+  color: #e94560;
+}
+
+.feature p {
+  color: #666;
+  line-height: 1.6;
+}
+
+body.dark-mode .feature p {
+  color: #aaa;
+}
+
+/* Galería de Clientes */
+.gallery-clients {
+  padding: 5rem 5%;
+  background: #ffffff;
+}
+
+body.dark-mode .gallery-clients {
+  background: #16213e;
+}
+
+.gallery-clients h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #0f3460;
+  margin-bottom: 3rem;
+}
+
+body.dark-mode .gallery-clients h2 {
+  color: #e94560;
+}
+
+.client-photos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.client-photos img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.client-photos img:hover {
+  transform: scale(1.05);
+}
+
+/* Preguntas Frecuentes */
+.faq {
+  padding: 5rem 5%;
+  background: #f8f9fa;
+}
+
+body.dark-mode .faq {
+  background: #0d1017;
+}
+
+.faq h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #0f3460;
+  margin-bottom: 3rem;
+}
+
+body.dark-mode .faq h2 {
+  color: #e94560;
+}
+
+.faq-item {
+  background: white;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+body.dark-mode .faq-item {
+  background: #16213e;
+}
+
+.faq-item h3 {
+  color: #e94560;
+  margin: 0 0 0.5rem;
+}
+
+.faq-item p {
+  margin: 0;
+  color: #666;
+}
+
+body.dark-mode .faq-item p {
+  color: #aaa;
+}
