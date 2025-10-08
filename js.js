@@ -180,3 +180,73 @@ function updateCountdown() {
 
 updateCountdown();
 setInterval(updateCountdown, 86400000); // Actualiza cada día
+
+
+
+// Botón flotante "Volver arriba"
+const scrollTopBtn = document.createElement("button");
+scrollTopBtn.classList.add("scroll-top");
+scrollTopBtn.innerHTML = "↑";
+scrollTopBtn.style.display = "none";
+document.body.appendChild(scrollTopBtn);
+
+window.onscroll = () => {
+  if (window.scrollY > 300) {
+    scrollTopBtn.style.display = "block";
+  } else {
+    scrollTopBtn.style.display = "none";
+  }
+};
+
+scrollTopBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+// Contador de clientes
+const counter1 = document.getElementById("counter1");
+const counter2 = document.getElementById("counter2");
+const counter3 = document.getElementById("counter3");
+
+const counters = [
+  { element: counter1, target: 5000 },
+  { element: counter2, target: 2000 },
+  { element: counter3, target: 25 }
+];
+
+const animateCounter = (element, target) => {
+  let count = 0;
+  const interval = setInterval(() => {
+    if (count < target) {
+      count += 50;
+      element.textContent = count.toLocaleString();
+    } else {
+      element.textContent = target.toLocaleString();
+      clearInterval(interval);
+    }
+  }, 20);
+};
+
+// Ejecutar contador al hacer scroll hacia la sección
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      counters.forEach(counter => animateCounter(counter.element, counter.target));
+      observer.disconnect();
+    }
+  });
+}, { threshold: 0.5 });
+
+const counterSection = document.querySelector(".counter");
+if (counterSection) {
+  observer.observe(counterSection);
+}
+
+// Animación de scroll suave
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute('href')).scrollIntoView({
+      behavior: 'smooth'
+    });
+  });
+});
