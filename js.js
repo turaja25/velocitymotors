@@ -371,3 +371,162 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
+
+
+// Traducciones
+const translations = {
+  es: {
+    homeTitle: "Domina la Calle con Estilo",
+    homeDesc: "Motos de alta cilindrada, potencia, elegancia y control.",
+    models: "Modelos",
+    finance: "Financiamiento",
+    gallery: "Galería",
+    testimonials: "Testimonios",
+    blog: "Blog",
+    contact: "Contacto",
+    about: "Quiénes Somos",
+    mission: "Misión",
+    vision: "Visión",
+    featuresTitle: "¿Por qué elegirnos?",
+    features: [
+      "Garantía Premium",
+      "Soporte 24/7",
+      "Entrega Rápida",
+      "Servicio Técnico"
+    ],
+    faq: [
+      "¿Ofrecen financiamiento?",
+      "¿Cuál es la garantía?",
+      "¿Hacen envíos internacionales?"
+    ],
+    faqAnswers: [
+      "Sí, ofrecemos planes de financiamiento flexibles con tasas competitivas.",
+      "Todas nuestras motos incluyen 2 años de garantía.",
+      "Sí, hacemos envíos a varios países. Consulta disponibilidad."
+    ],
+    promo: "🎁 ¡Tu primera compra con 15% de descuento!",
+    counter: [
+      "Clientes Satisfechos",
+      "Motos Vendidas",
+      "Países"
+    ],
+    contactForm: {
+      name: "Nombre",
+      email: "Email",
+      phone: "Teléfono",
+      message: "Mensaje",
+      send: "Enviar Mensaje"
+    }
+  },
+  en: {
+    homeTitle: "Dominate the Street with Style",
+    homeDesc: "High-performance motorcycles, power, elegance and control.",
+    models: "Models",
+    finance: "Financing",
+    gallery: "Gallery",
+    testimonials: "Testimonials",
+    blog: "Blog",
+    contact: "Contact",
+    about: "About Us",
+    mission: "Mission",
+    vision: "Vision",
+    featuresTitle: "Why Choose Us?",
+    features: [
+      "Premium Warranty",
+      "24/7 Support",
+      "Fast Delivery",
+      "Technical Service"
+    ],
+    faq: [
+      "Do you offer financing?",
+      "What is the warranty?",
+      "Do you ship internationally?"
+    ],
+    faqAnswers: [
+      "Yes, we offer flexible financing plans with competitive rates.",
+      "All our motorcycles include a 2-year warranty.",
+      "Yes, we ship to several countries. Check availability."
+    ],
+    promo: "🎁 Your first purchase with 15% discount!",
+    counter: [
+      "Satisfied Customers",
+      "Motorcycles Sold",
+      "Countries"
+    ],
+    contactForm: {
+      name: "Name",
+      email: "Email",
+      phone: "Phone",
+      message: "Message",
+      send: "Send Message"
+    }
+  }
+};
+
+// Función para cambiar idioma
+function changeLanguage(lang) {
+  const t = translations[lang];
+
+  // Cambiar título y descripción del home
+  document.querySelector("#home h1")?.textContent = t.homeTitle;
+  document.querySelector("#home p")?.textContent = t.homeDesc;
+
+  // Cambiar enlaces de navegación
+  document.querySelector('a[href="#models"]')?.previousElementSibling?.nextElementSibling?.textContent = t.models;
+  document.querySelector('a[href="#finance"]')?.previousElementSibling?.nextElementSibling?.textContent = t.finance;
+  document.querySelector('a[href="#gallery"]')?.previousElementSibling?.nextElementSibling?.textContent = t.gallery;
+  document.querySelector('a[href="#testimonials"]')?.previousElementSibling?.nextElementSibling?.textContent = t.testimonials;
+  document.querySelector('a[href="#blog"]')?.previousElementSibling?.nextElementSibling?.textContent = t.blog;
+  document.querySelector('a[href="#contact"]')?.previousElementSibling?.nextElementSibling?.textContent = t.contact;
+  document.querySelector('a[href="#about"]')?.previousElementSibling?.nextElementSibling?.textContent = t.about;
+
+  // Cambiar secciones
+  document.querySelector("#features h2")?.textContent = t.featuresTitle;
+  document.querySelectorAll(".feature h3")[0].textContent = t.features[0];
+  document.querySelectorAll(".feature h3")[1].textContent = t.features[1];
+  document.querySelectorAll(".feature h3")[2].textContent = t.features[2];
+  document.querySelectorAll(".feature h3")[3].textContent = t.features[3];
+
+  // Cambiar FAQ
+  document.querySelectorAll(".faq-item h3")[0].textContent = t.faq[0];
+  document.querySelectorAll(".faq-item p")[0].textContent = t.faqAnswers[0];
+  document.querySelectorAll(".faq-item h3")[1].textContent = t.faq[1];
+  document.querySelectorAll(".faq-item p")[1].textContent = t.faqAnswers[1];
+  document.querySelectorAll(".faq-item h3")[2].textContent = t.faq[2];
+  document.querySelectorAll(".faq-item p")[2].textContent = t.faqAnswers[2];
+
+  // Cambiar banner
+  document.querySelector(".promo-text h3")?.textContent = t.promo;
+
+  // Cambiar contador
+  document.querySelectorAll(".counter-item p")[0].textContent = t.counter[0];
+  document.querySelectorAll(".counter-item p")[1].textContent = t.counter[1];
+  document.querySelectorAll(".counter-item p")[2].textContent = t.counter[2];
+
+  // Cambiar formulario de contacto
+  const inputs = document.querySelectorAll("#contactForm input, #contactForm textarea");
+  inputs[0].placeholder = t.contactForm.name;
+  inputs[1].placeholder = t.contactForm.email;
+  inputs[2].placeholder = t.contactForm.phone;
+  inputs[3].placeholder = t.contactForm.message;
+  document.querySelector("#contactForm button")?.textContent = t.contactForm.send;
+
+  // Guardar idioma en localStorage
+  localStorage.setItem("language", lang);
+}
+
+// Botón de idioma
+const langToggle = document.getElementById("langToggle");
+let currentLang = localStorage.getItem("language") || "es";
+
+// Actualizar botón de idioma
+langToggle.textContent = currentLang === "es" ? "EN" : "ES";
+
+langToggle.addEventListener("click", () => {
+  currentLang = currentLang === "es" ? "en" : "es";
+  langToggle.textContent = currentLang === "es" ? "EN" : "ES";
+  changeLanguage(currentLang);
+});
+
+// Aplicar idioma al cargar
+changeLanguage(currentLang);
