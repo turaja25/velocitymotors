@@ -250,3 +250,123 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
   });
 });
+
+
+// Carrito funcional
+let cart = [];
+const cartCountElement = document.querySelector(".cart-count");
+const cartModal = document.getElementById("cartModal");
+const cartItemsContainer = document.getElementById("cartItems");
+const cartTotalElement = document.getElementById("cartTotal");
+const closeCart = document.getElementById("closeCart");
+const cartOverlay = document.createElement("div");
+cartOverlay.classList.add("cart-overlay");
+document.body.appendChild(cartOverlay);
+
+// Abrir carrito
+document.querySelector(".cart-btn").addEventListener("click", () => {
+  cartModal.classList.add("active");
+  cartOverlay.classList.add("active");
+});
+
+// Cerrar carrito
+closeCart.addEventListener("click", () => {
+  cartModal.classList.remove("active");
+  cartOverlay.classList.remove("active");
+});
+
+// Cerrar carrito al hacer clic en el overlay
+cartOverlay.addEventListener("click", () => {
+  cartModal.classList.remove("active");
+  cartOverlay.classList.remove("active");
+});
+
+// Agregar productos al carrito
+document.querySelectorAll(".add-to-cart").forEach(button => {
+  button.addEventListener("click", () => {
+    const card = button.closest(".card");
+    const title = card.querySelector("h3").textContent;
+    const price = parseFloat(card.querySelector(".price").textContent.replace("$", ""));
+    const image = card.querySelector("img").src;
+
+    const item = { title, price, image };
+    cart.push(item);
+    updateCart();
+    showNotification(`${title} agregado al carrito`);
+  });
+});
+
+function updateCart() {
+  cartCountElement.textContent = cart.length;
+
+  // Limpiar carrito visual
+  cartItemsContainer.innerHTML = "";
+
+  let total = 0;
+
+  cart.forEach(item => {
+    total += item.price;
+
+    const cartItemElement = document.createElement("div");
+    cartItemElement.classList.add("cart-item");
+
+    cartItemElement.innerHTML = `
+      <div class="cart-item-info">
+        <img src="${item.image}" alt="${item.title}">
+        <div>
+          <h4>${item.title}</h4>
+          <p>$${item.price}</p>
+        </div>
+      </div>
+      <button class="remove-item" data-title="${item.title}">×</button>
+    `;
+
+    cartItemsContainer.appendChild(cartItemElement);
+  });
+
+  cartTotalElement.textContent = `$${total.toFixed(2)}`;
+
+  // Añadir funcionalidad para eliminar items
+  document.querySelectorAll(".remove-item").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const title = btn.getAttribute("data-title");
+      cart = cart.filter(item => item.title !== title);
+      updateCart();
+    });
+  });
+}
+
+function showNotification(message) {
+  const notification = document.createElement("div");
+  notification.textContent = message;
+  notification.style.cssText = `
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #e94560;
+    color: white;
+    padding: 1rem;
+    border-radius: 5px;
+    z-index: 1000;
+    animation: slideIn 0.3s, fadeOut 0.5s 2.5s forwards;
+  `;
+  document.body.appendChild(notification);
+
+  setTimeout(() => {
+    notification.remove();
+  }, 3000);
+}
+
+// Animación para notificación
+const style = document.createElement("style");
+style.textContent = `
+  @keyframes slideIn {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+  }
+  @keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
+`;
+document.head.appendChild(style);
