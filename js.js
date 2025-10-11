@@ -374,3 +374,49 @@ document.head.appendChild(style);
 
 
 
+
+// Checkout modal
+const checkoutModal = document.getElementById("checkoutModal");
+const closeCheckout = document.getElementById("closeCheckout");
+const checkoutForm = document.getElementById("checkoutForm");
+
+// Abrir checkout al hacer clic en "Finalizar Compra"
+document.querySelector(".cart-footer .cta-btn").addEventListener("click", () => {
+  if (cart.length === 0) {
+    showNotification("El carrito está vacío");
+    return;
+  }
+  checkoutModal.classList.add("active");
+});
+
+// Cerrar checkout
+closeCheckout.addEventListener("click", () => {
+  checkoutModal.classList.remove("active");
+});
+
+// Cerrar checkout al hacer clic fuera
+checkoutModal.addEventListener("click", (e) => {
+  if (e.target === checkoutModal) {
+    checkoutModal.classList.remove("active");
+  }
+});
+
+// Procesar compra
+checkoutForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  // Aquí iría la lógica de procesamiento de pago (simulada)
+  showNotification("¡Compra realizada con éxito!");
+  
+  // Vaciar carrito
+  cart = [];
+  updateCart();
+  
+  // Cerrar modales
+  checkoutModal.classList.remove("active");
+  cartModal.classList.remove("active");
+  cartOverlay.classList.remove("active");
+
+  // Resetear formulario
+  checkoutForm.reset();
+});
