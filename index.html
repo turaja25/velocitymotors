@@ -270,13 +270,20 @@
   </a>
 
   <!-- Chatbot -->
-  <div class="chatbot-container">
+  <div class="chatbot-container" id="chatbotContainer">
     <div class="chat-header">
       <h4>VELOCITY Assistant</h4>
       <span class="close-btn" id="closeChat">✕</span>
     </div>
     <div class="chat-messages" id="chatMessages">
-      <div class="message bot">¡Hola! ¿En qué puedo ayudarte?</div>
+      <div class="message bot">¡Hola! 👋 Soy VELOCITY Assistant. ¿En qué puedo ayudarte?</div>
+      <div class="message bot">Puedes preguntarme:<br>
+        - Modelos disponibles<br>
+        - Financiamiento<br>
+        - Prueba de manejo<br>
+        - Contacto<br>
+        - O escribe tu pregunta
+      </div>
     </div>
     <div class="chat-input">
       <input type="text" id="userInput" placeholder="Escribe aquí...">
@@ -284,6 +291,9 @@
     </div>
   </div>
 
+  <button class="chatbot-btn" id="openChat">
+    <i class="fas fa-comments"></i>
+  </button>
   <button class="chatbot-btn" id="openChat">
     <i class="fas fa-comments"></i>
   </button>
@@ -465,6 +475,7 @@
 
 
  
+
 
 
 
