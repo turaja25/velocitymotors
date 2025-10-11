@@ -1226,3 +1226,93 @@ body.dark-mode .cart-footer {
 }
 
 
+
+/* Modal de Checkout */
+.checkout-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.checkout-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.checkout-content {
+  background: white;
+  width: 90%;
+  max-width: 500px;
+  border-radius: 10px;
+  padding: 2rem;
+  position: relative;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+body.dark-mode .checkout-content {
+  background: #16213e;
+  color: white;
+}
+
+.checkout-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.close-checkout {
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #e94560;
+}
+
+#checkoutForm input, #checkoutForm textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #f8f9fa;
+  color: #333;
+}
+
+body.dark-mode #checkoutForm input, body.dark-mode #checkoutForm textarea {
+  background: #1a1a2e;
+  color: #f1f1f1;
+}
+
+.card-details {
+  display: flex;
+  gap: 1rem;
+}
+
+.card-details input {
+  flex: 1;
+}
+
+#checkoutForm button {
+  width: 100%;
+  background: #e94560;
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+}
+
+#checkoutForm button:hover {
+  background: #0f3460;
+}
