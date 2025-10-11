@@ -102,47 +102,75 @@ document.addEventListener("DOMContentLoaded", function () {
     newsletterForm.reset();
   });
 
-  // Chatbot functionality
-  const openChat = document.getElementById("openChat");
-  const closeChat = document.getElementById("closeChat");
-  const chatContainer = document.querySelector(".chatbot-container");
-  const userInput = document.getElementById("userInput");
-  const sendBtn = document.getElementById("sendBtn");
-  const chatMessages = document.getElementById("chatMessages");
+// Chatbot funcional
+const openChat = document.getElementById("openChat");
+const closeChat = document.getElementById("closeChat");
+const chatContainer = document.getElementById("chatbotContainer");
+const userInput = document.getElementById("userInput");
+const sendBtn = document.getElementById("sendBtn");
+const chatMessages = document.getElementById("chatMessages");
 
-  openChat.addEventListener("click", () => {
-    chatContainer.style.display = "flex";
-  });
+// Función para añadir mensaje
+function appendMessage(text, sender) {
+  const messageDiv = document.createElement("div");
+  messageDiv.classList.add("message", sender);
+  messageDiv.textContent = text;
+  chatMessages.appendChild(messageDiv);
+  chatMessages.scrollTop = chatMessages.scrollHeight;
+}
 
-  closeChat.addEventListener("click", () => {
-    chatContainer.style.display = "none";
-  });
+// Función para responder al usuario
+function respondToUser(message) {
+  message = message.toLowerCase();
 
-  sendBtn.addEventListener("click", sendMessage);
-  userInput.addEventListener("keypress", (e) => {
-    if (e.key === "Enter") sendMessage();
-  });
-
-  function sendMessage() {
-    const message = userInput.value.trim();
-    if (message) {
-      appendMessage(message, "user");
-      userInput.value = "";
-
-      // Simulate bot response
-      setTimeout(() => {
-        appendMessage("Gracias por tu mensaje. ¿Puedo ayudarte con algo más?", "bot");
-      }, 1000);
-    }
+  if (message.includes("hola") || message.includes("buenos días") || message.includes("buenas tardes")) {
+    return "¡Hola! 👋 ¿En qué puedo ayudarte hoy?";
+  } else if (message.includes("modelo") || message.includes("motos") || message.includes("disponibles")) {
+    return "Tenemos estos modelos disponibles:\n- GSX-R1000R (1000cc, 200 HP)\n- Hayabusa (1340cc, 194 HP)\n- V-Strom 1050XT (1000cc, 107 HP)\n¿Quieres ver precios?";
+  } else if (message.includes("precio") || message.includes("cuánto cuesta")) {
+    return "Precios:\n- GSX-R1000R: $18,990\n- Hayabusa: $21,500\n- V-Strom 1050XT: $16,750\n¿Te interesa financiar alguna?";
+  } else if (message.includes("financiamiento") || message.includes("crédito") || message.includes("prestamo")) {
+    return "Ofrecemos planes de financiamiento desde 12 hasta 60 meses. ¿Quieres calcular cuota mensual?";
+  } else if (message.includes("prueba") || message.includes("manejo") || message.includes("test drive")) {
+    return "¡Claro! Puedes solicitar una prueba de manejo desde la sección 'Prueba de Manejo'. ¿Quieres que te lleve allá?";
+  } else if (message.includes("contacto") || message.includes("teléfono") || message.includes("email")) {
+    return "Puedes contactarnos en:\n- Teléfono: +1 (800) VELOCITY\n- Email: ventas@velocitymotors.com\n- Dirección: Calle Moto 123, Ciudad";
+  } else if (message.includes("gracias") || message.includes("adiós") || message.includes("chao")) {
+    return "¡Gracias por contactarnos! 🏍️ ¡Que tengas un excelente día!";
+  } else {
+    return "No entendí tu pregunta. Puedes preguntarme sobre:\n- Modelos\n- Precios\n- Financiamiento\n- Prueba de manejo\n- Contacto";
   }
+}
 
-  function appendMessage(text, sender) {
-    const messageDiv = document.createElement("div");
-    messageDiv.classList.add("message", sender);
-    messageDiv.textContent = text;
-    chatMessages.appendChild(messageDiv);
-    chatMessages.scrollTop = chatMessages.scrollHeight;
+// Abrir chat
+openChat.addEventListener("click", () => {
+  chatContainer.style.display = "flex";
+});
+
+// Cerrar chat
+closeChat.addEventListener("click", () => {
+  chatContainer.style.display = "none";
+});
+
+// Enviar mensaje
+sendBtn.addEventListener("click", sendMessage);
+userInput.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") sendMessage();
+});
+
+function sendMessage() {
+  const message = userInput.value.trim();
+  if (message) {
+    appendMessage(message, "user");
+    userInput.value = "";
+
+    // Simular tiempo de respuesta
+    setTimeout(() => {
+      const response = respondToUser(message);
+      appendMessage(response, "bot");
+    }, 1000);
   }
+}
 
   // Gallery 360 view (simulated)
   const view360Buttons = document.querySelectorAll(".view-360");
@@ -420,3 +448,4 @@ checkoutForm.addEventListener("submit", (e) => {
   // Resetear formulario
   checkoutForm.reset();
 });
+
