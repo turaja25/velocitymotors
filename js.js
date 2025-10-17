@@ -449,4 +449,3 @@ checkoutForm.addEventListener("submit", (e) => {
   checkoutForm.reset();
 });
 
-
