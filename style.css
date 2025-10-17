@@ -1438,4 +1438,82 @@ body.dark-mode .chat-input input {
 
 .chatbot-btn:hover {
   background-color: #0f3460;
+} 
+
+/* Nueva paleta de colores */
+:root {
+  --primary: #0d1017;
+  --secondary: #1a1a2e;
+  --accent: #e94560;
+  --light: #f1f1f1;
+  --gray: #d3d3d3;
+}
+
+/* Body con nuevo fondo */
+body {
+  background-color: var(--primary);
+  color: var(--light);
+}
+
+/* Efecto vidrioso (glassmorphism) */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* Aplicar efecto vidrioso a header */
+.navbar {
+  background: rgba(13, 16, 23, 0.8) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(233, 69, 96, 0.2);
+}
+
+/* Aplicar efecto vidrioso a cards */
+.card, .service, .testimonial, .blog-card, .stat, .product {
+  background: rgba(26, 26, 46, 0.5) !important;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(233, 69, 96, 0.2);
+}
+
+/* Aplicar efecto vidrioso a chatbot */
+.chatbot-container {
+  background: rgba(26, 26, 46, 0.8) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(233, 69, 96, 0.3);
+}
+
+/* Aplicar efecto vidrioso a formulario */
+#contactForm input, #contactForm textarea {
+  background: rgba(26, 26, 46, 0.5) !important;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(233, 69, 96, 0.3);
+  color: var(--light);
+}
+
+/* Botones con nuevo color */
+.cta-btn {
+  background-color: var(--accent) !important;
+  color: var(--light) !important;
+}
+
+.cta-btn:hover {
+  background-color: var(--secondary) !important;
+}
+
+/* Hero con efecto vidrioso en texto */
+.hero-content {
+  background: rgba(13, 16, 23, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 10px;
+  padding: 2rem;
+  display: inline-block;
 }
